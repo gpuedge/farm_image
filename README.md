@@ -222,15 +222,16 @@ File.rm!("/mnt/etc/update-motd.d/60-unminimize")
 gpux = """
 #!/bin/sh
 printf "\\n\\n"
-printf "  __________________ ____ _______  ___"
-printf " /  _____/\\______   \\    |   \\   \\/  /"
-printf "/   \\  ___ |     ___/    |   /\\     / "
-printf "\\    \\_\\  \\|    |   |    |  / /     \\ "
-printf " \\______  /|____|   |______/ /___/\\  \\"
-printf "        \\/                         \\_/"
+printf "  __________________ ____ _______  ___\\n"
+printf " /  _____/\\______   \\    |   \\   \\/  /\\n"
+printf "/   \\  ___ |     ___/    |   /\\     / \\n"
+printf "\\    \\_\\  \\|    |   |    |  / /     \\ \\n"
+printf " \\______  /|____|   |______/ /___/\\  \\\\n"
+printf "        \\/                         \\_/\\n"
 printf "\\n\\n"
 """
 File.write!("/mnt/etc/update-motd.d/10-gpux", String.trim(gpux))
+{"", 0} = System.shell("chmod +x /mnt/etc/update-motd.d/10-gpux", [stderr_to_stdout: true])
 
 #dont forgot to replace instances in /boot/grub/grub.cfg of /dev/sdaX with UUID
 
