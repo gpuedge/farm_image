@@ -199,9 +199,10 @@ sysctl = """
 net.ipv4.ip_unprivileged_port_start = 22
 net.core.netdev_max_backlog = 307200
 
-net.core.rmem_max = 8388608
-net.core.wmem_max = 8388608
-net.ipv4.tcp_rmem = 4096 1048576 8388608
+net.ipv4.tcp_rmem = 8192 262144 536870912
+net.ipv4.tcp_wmem = 4096 16384 536870912
+net.ipv4.tcp_adv_win_scale = -2
+net.ipv4.tcp_notsent_lowat = 131072
 """
 File.write!("/mnt/etc/sysctl.conf", String.trim(sysctl))
 
