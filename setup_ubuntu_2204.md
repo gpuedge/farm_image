@@ -99,7 +99,7 @@ apt-get install --no-install-recommends nvidia-driver-515
 wget https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_515.65.01_linux.run
 sh cuda_11.7.1_515.65.01_linux.run --silent --toolkit --no-drm --no-man-page --override
 rm cuda_11.7.1_515.65.01_linux.run
-echo "PATH=\"\$PATH:/usr/local/cuda-11.7/bin\"" > /etc/environment && \
+echo "PATH=\"$PATH:/usr/local/cuda-11.7/bin\"" > /etc/environment && \
 echo "CUDA_HOME=\"/usr/local/cuda-11.7\"" >> /etc/environment && \
 echo "CUDA_PATH=\"/usr/local/cuda-11.7\"" >> /etc/environment
 
